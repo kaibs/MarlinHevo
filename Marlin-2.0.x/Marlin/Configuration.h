@@ -732,7 +732,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 800, 413 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 800, 418 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -752,7 +752,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 900, 900, 100, 3000 }
+#define DEFAULT_MAX_ACCELERATION      { 800, 800, 100, 10000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -768,7 +768,7 @@
  *   M204 T    Travel Acceleration
  */
 #define DEFAULT_ACCELERATION          900    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  900    // E acceleration for retracts
+#define DEFAULT_RETRACT_ACCELERATION  3000    // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   3000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
@@ -779,11 +779,11 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-//#define CLASSIC_JERK
+#define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
-  #define DEFAULT_XJERK 10.0
-  #define DEFAULT_YJERK 10.0
-  #define DEFAULT_ZJERK  0.3
+  #define DEFAULT_XJERK 15.0
+  #define DEFAULT_YJERK 15.0
+  #define DEFAULT_ZJERK  0.5
 
   //#define TRAVEL_EXTRA_XYJERK 0.0     // Additional jerk allowance for all travel moves
 
@@ -793,7 +793,7 @@
   #endif
 #endif
 
-#define DEFAULT_EJERK    5.0  // May be used by Linear Advance
+#define DEFAULT_EJERK    20.0  // May be used by Linear Advance
 
 /**
  * Junction Deviation Factor
@@ -803,7 +803,7 @@
  *   http://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
 #if DISABLED(CLASSIC_JERK)
-  #define JUNCTION_DEVIATION_MM 0.04 // (mm) Distance from real junction edge
+  #define JUNCTION_DEVIATION_MM 0.041 // (mm) Distance from real junction edge
 #endif
 
 /**
@@ -958,7 +958,7 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET { 0, 0, 0.2 }
+#define NOZZLE_TO_PROBE_OFFSET { 0, 0, 0.15 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.

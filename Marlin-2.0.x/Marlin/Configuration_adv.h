@@ -781,7 +781,7 @@
 // Backlash Compensation
 // Adds extra movement to axes on direction-changes to account for backlash.
 //
-//#define BACKLASH_COMPENSATION
+#define BACKLASH_COMPENSATION
 #if ENABLED(BACKLASH_COMPENSATION)
   // Define values for backlash distance and correction.
   // If BACKLASH_GCODE is enabled these values are the defaults.
@@ -790,10 +790,10 @@
 
   // Set BACKLASH_SMOOTHING_MM to spread backlash correction over multiple segments
   // to reduce print artifacts. (Enabling this is costly in memory and computation!)
-  //#define BACKLASH_SMOOTHING_MM 3 // (mm)
+  #define BACKLASH_SMOOTHING_MM 3 // (mm)
 
   // Add runtime configuration and tuning of backlash values (M425)
-  //#define BACKLASH_GCODE
+  #define BACKLASH_GCODE
 
   #if ENABLED(BACKLASH_GCODE)
     // Measure the Z backlash when probing (G29) and set with "M425 Z"
@@ -2109,7 +2109,7 @@
   #endif
 
   #if AXIS_IS_TMC(E0)
-    #define E0_CURRENT      700
+    #define E0_CURRENT      800
     #define E0_MICROSTEPS    16
     #define E0_RSENSE         0.11
     #define E0_CHAIN_POS     -1
@@ -2340,7 +2340,7 @@
    * Beta feature!
    * Create a 50/50 square wave step pulse optimal for stepper drivers.
    */
-  //#define SQUARE_WAVE_STEPPING
+  #define SQUARE_WAVE_STEPPING
 
   /**
    * Enable M122 debugging command for TMC stepper drivers.
